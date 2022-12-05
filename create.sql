@@ -10,7 +10,7 @@ CREATE TABLE customer (
 
 --Creating car table second because invoice, ticket, and salesperson reference its primary key
 CREATE TABLE car (
-    car_id SERIAL PRIMARY KEY,q
+    car_id SERIAL PRIMARY KEY,
     customer_id INTEGER NOT NULL,
     make VARCHAR(20),
     model VARCHAR(25),
@@ -23,7 +23,7 @@ CREATE TABLE salesperson (
     staff_id SERIAL PRIMARY KEY,
     car_id INTEGER NOT NULL,
     first_name VARCHAR(100),
-    last_name VARCHAR(100)
+    last_name VARCHAR(100),
     FOREIGN KEY(car_id) REFERENCES car(car_id)
 );
 
